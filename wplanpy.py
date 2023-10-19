@@ -12,7 +12,7 @@ import numpy as np
 def planning(n_up, n_down, time_ready_up, time_ready_down, beam_up, beam_down, vmax_up, vmax_down, draft_up, draft_down, time_dead_up, time_dead_down, critic_points, dist, width, speed_limits, speed_limits_inv, waypoints):
     
     ###########################################################################
-                                 # TUBE FINDING (encapsular esto)
+                                 # TUBE FINDING 
     ###########################################################################                             
     
     # Tubes for vessels UP
