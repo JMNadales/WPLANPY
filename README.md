@@ -9,11 +9,11 @@ The objective is to schedule vessels' trip plans so that waiting and transit tim
 * Calculate a series of  crossing windows for safe navigation taking into account the effect of the tide.
 * Solve an optimization problem for finding the optimal trip plan of each vessel. This optimal trip plan is a collection of times when each vessel shoudl cross through each waypoint in the waterway.
 
-  ## HOW TO INSTALL
+## HOW TO INSTALL
   
-  1. Clone this project to you working repository. All required files to run de code are included.
+1. Clone this project to you working repository. All required files to run de code are included.
  
-  ## HOW TO TWEAK THIS PROJECT FOR YOUR OWN USES
+## HOW TO TWEAK THIS PROJECT FOR YOUR OWN USES
 
-  I would encourage you to clone and rename this project. 
+I would encourage you to clone and rename this project. 
   
