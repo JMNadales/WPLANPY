@@ -38,7 +38,7 @@ def planning(n_up, n_down, time_ready_up, time_ready_down, beam_up, beam_down, v
     ###########################################################################
                              
     # Model Creation
-    m = Model(sense=minimize,solver_name='GRB')
+    m = Model(sense=minimize,solver_name='<your solver>')
     
     # Time varibales
     t_u = [[m.add_var() for i in range(0,len(waypoints))]for j in range(0,n_up)]
