@@ -1,18 +1,25 @@
 # WPLANPY. A Python Tool for Scheduling Vessels in Inland Waterways
 
+
+
 ## CITATION
+
 If you employ this code, please add the following reference to to manuscript.
+
 APA: 
 
 Nadales, J. M., de la Peña, D. M., Limon, D., & Alamo, T. (2023). Safe Optimal Vessel Planning on Natural Inland Waterways. IEEE Transactions on Intelligent Transportation Systems.
 
 ISO 690:
+
 NADALES, Juan Moreno, et al. Safe Optimal Vessel Planning on Natural Inland Waterways. IEEE Transactions on Intelligent Transportation Systems, 2023.
 
 MLA: 
+
 Nadales, Juan Moreno, et al. "Safe Optimal Vessel Planning on Natural Inland Waterways." IEEE Transactions on Intelligent Transportation Systems (2023).
 
 BibTex:
+
 @article{nadales2023safe,
   title={Safe Optimal Vessel Planning on Natural Inland Waterways},
   author={Nadales, Juan Moreno and de la Pe{\~n}a, David Mu{\~n}oz and Limon, Daniel and Alamo, Teodoro},
