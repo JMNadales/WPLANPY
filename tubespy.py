@@ -1,7 +1,5 @@
 import numpy as np
 from numpy import load
-import matplotlib.pyplot as plt
-
 
 #######################################################################################################
                                             # CALUCLATE DEPTH MAP BIN
@@ -48,29 +46,30 @@ def calculate_window_entries_and_exits(depth_map_bin, t_ready, t_deadline, colum
 ######################################################################################################
                           # TUBES FINDING FUNCTION (3 WWINDOW SIMPLIFICATION)
 ######################################################################################################
-def tubes_finding (vessel_draft, t_ready, t_deadline, updown, critic_points,dist, speed_limits_inv):
+def tubes_finding (vessel_draft, t_ready, t_deadline, updown, critic_points, dist, speed_limits_inv):
     
     ##########################
-    # CALCULO DEL MAPA BINARIO
+    # CALCUATE BINARY MAP
     ##########################
     
     depth_map_filename = 'depth_map.npy'
     depth_map_bin = calculate_depth_map_bin(depth_map_filename, t_ready, t_deadline, vessel_draft)
     
     ################################################
-    # CALCULO DE LAS VENTANAS en LOS PUNTOS CRITICOS
+    # CALCULATE CROSSING WINDOWS
     ################################################
     
     w_1 = calculate_window_entries_and_exits(depth_map_bin, t_ready, t_deadline, critic_points[0])
     w_2 = calculate_window_entries_and_exits(depth_map_bin, t_ready, t_deadline, critic_points[1])
     w_3 = calculate_window_entries_and_exits(depth_map_bin, t_ready, t_deadline, critic_points[2])    
+  
     ################################################    
                     # PATH ROUTING       
     ###############################################
     if updown == 0:
         path_from_1_to_2 = []
         for i in range(0, len(w_1)):
-            time_arrival_to_2 = w_1[i][0] + 10*(np.dot(dist[0:12], speed_limits_inv[0:12]))     
+            time_arrival_to_2 = w_1[i][0] + 10*(np.dot(dist[0:12], speed_limits_inv[0:critic_points[1]]))     
         
             for j in range(0, len(w_2)):
                 if time_arrival_to_2 <= w_2[j][1]:
@@ -78,7 +77,7 @@ def tubes_finding (vessel_draft, t_ready, t_deadline, updown, critic_points,dist
         path_from_2_to_3 = []
         time_arrival_to_3_hist = [];  
         for i in range(0, len(path_from_1_to_2)):      
-            time_arrival_to_3 = path_from_1_to_2[i][1][0] + 10*(np.dot(dist[12:24], speed_limits_inv[12:24]))  
+            time_arrival_to_3 = path_from_1_to_2[i][1][0] + 10*(np.dot(dist[critic_points[1]:24], speed_limits_inv[12:24]))  
             time_arrival_to_3_hist.append(time_arrival_to_3)
             for j in range(0, len(w_3)):
                 if time_arrival_to_3 <= w_3[j][1]:
