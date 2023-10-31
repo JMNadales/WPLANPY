@@ -4,7 +4,7 @@
 
 ## CITATION
 
-If you employ this code, please add the following reference to to manuscript.
+If you employ this code, please add the following reference to your manuscript.
 
 APA: 
 
